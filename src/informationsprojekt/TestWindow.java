@@ -37,6 +37,12 @@ public class TestWindow extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
+        jDialog1.setAlwaysOnTop(true);
+        jDialog1.setLocation(new java.awt.Point(300, 300));
+        jDialog1.setMinimumSize(new java.awt.Dimension(300, 300));
+        jDialog1.setPreferredSize(new java.awt.Dimension(500, 500));
+        jDialog1.setSize(new java.awt.Dimension(500, 500));
+
         jLabel2.setText("Jag varnade dig...");
 
         jLabel3.setText("Startar Tysk-läder-porr.exe...");
@@ -86,7 +92,7 @@ public class TestWindow extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
@@ -152,7 +158,7 @@ public class TestWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jDialog1.setVisible(false);
+        jDialog1.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
