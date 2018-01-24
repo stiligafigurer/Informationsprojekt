@@ -14,9 +14,9 @@ import oru.inf.InfDB;
 
 /**
  *
- * @author Rasmus
+ * @author Rasmus & Felix
  */
-public class Main extends javax.swing.JFrame {
+public class Blogg extends javax.swing.JFrame {
 
     DefaultListModel dmInlaggFU = new DefaultListModel();
     DefaultListModel dmInlaggFritid = new DefaultListModel();
@@ -25,7 +25,7 @@ public class Main extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
-    public Main() {
+    public Blogg() {
         initComponents();
         fyllInlaggFU();
         fyllInlaggFritid();
@@ -33,6 +33,7 @@ public class Main extends javax.swing.JFrame {
 
     }
 
+    // Fyll listan med blogginlägg under forskning/utbildning
     private void fyllInlaggFU() {
         /*try {
             ArrayList<HashMap<String, String>> inlaggen;
@@ -57,6 +58,7 @@ public class Main extends javax.swing.JFrame {
         jlInlaggFU.setModel(dmInlaggFU);
     }
 
+    // Fyll listan med blogginlägg under fritid
     private void fyllInlaggFritid() {
         /*try {
             ArrayList<HashMap<String, String>> inlaggen;
@@ -133,7 +135,7 @@ public class Main extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jList1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("ORU - Informatik");
+        setTitle("ORU - Blogg");
         setIconImage(new ImageIcon(getClass().getResource("/img" + "/oru_favicon.png")).getImage());
 
         btnSkrivFU.setText("Skriv Inlägg");
@@ -249,10 +251,12 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // Öppnar ett NewPostWindow
     private void btnSkrivFUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkrivFUActionPerformed
         new NewPostWindow().setVisible(true);
     }//GEN-LAST:event_btnSkrivFUActionPerformed
 
+    // Öppnar ett blogginlägg när användaren klickar på det
     private void jlInlaggFUMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlInlaggFUMouseClicked
         int valtInlagg = jlInlaggFU.getSelectedIndex();
         if (valtInlagg != -1) {
