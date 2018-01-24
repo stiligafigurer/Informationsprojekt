@@ -17,8 +17,8 @@ import oru.inf.InfDB;
  */
 public class Main extends javax.swing.JFrame {
 
+    DefaultListModel dmInlagg = new DefaultListModel();
     //private final InfDB db;
-
     /**
      * Creates new form Main
      */
@@ -30,8 +30,7 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void fyllInlaggFU() {
-        DefaultListModel dmInlagg = new DefaultListModel();
-        /*try {
+                /*try {
             ArrayList<HashMap<String, String>> inlaggen;
             inlaggen = db.fetchRows("");
 
@@ -46,7 +45,11 @@ public class Main extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error: " + e);
         } */
-        dmInlagg.addElement("OPEN ME SENPAI");
+        dmInlagg.addElement("BLOGG-ID 5");
+        dmInlagg.addElement("BLOGG-ID 4");
+        dmInlagg.addElement("BLOGG-ID 3");
+        dmInlagg.addElement("BLOGG-ID 2");
+        dmInlagg.addElement("BLOGG-ID 1");
         jlInlaggFU.setModel(dmInlagg);
     }
 
@@ -109,6 +112,11 @@ public class Main extends javax.swing.JFrame {
         });
 
         jlInlaggFU.setToolTipText("");
+        jlInlaggFU.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlInlaggFUMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(jlInlaggFU);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -182,6 +190,16 @@ public class Main extends javax.swing.JFrame {
     private void btnSkrivFUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkrivFUActionPerformed
         //new.NewPostWindow().setVisible(true);
     }//GEN-LAST:event_btnSkrivFUActionPerformed
+
+    private void jlInlaggFUMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlInlaggFUMouseClicked
+        int valtInlagg = jlInlaggFU.getSelectedIndex();
+        if (valtInlagg != -1) {
+            
+            int bloggId;
+            bloggId = + dmInlagg.getSize() - valtInlagg;
+            System.out.println(bloggId);
+        }
+    }//GEN-LAST:event_jlInlaggFUMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSkrivFU;
