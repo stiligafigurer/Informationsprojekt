@@ -5,6 +5,8 @@
  */
 package informationsprojekt;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author adamlilienberg
@@ -195,6 +197,8 @@ public class NewPostWindow extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ORU - Nytt Inlägg");
+        setIconImage(new ImageIcon(getClass().getResource("/img" + "/oru_favicon.png")).getImage());
         setLocation(new java.awt.Point(400, 400));
         setMaximumSize(new java.awt.Dimension(1000, 1000));
         setMinimumSize(new java.awt.Dimension(500, 500));
