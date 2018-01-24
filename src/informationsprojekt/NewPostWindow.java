@@ -42,14 +42,13 @@ public class NewPostWindow extends javax.swing.JFrame {
         jpNyPostFU = new javax.swing.JPanel();
         btnSkickaPost1 = new javax.swing.JButton();
         btnTillbaka1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        epPostTitelFU = new javax.swing.JEditorPane();
         lblPostTitelFU = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         epPostFonsterFU = new javax.swing.JEditorPane();
         lblForsUtbHead = new javax.swing.JLabel();
         cbKategoriFU = new javax.swing.JComboBox<>();
         lblKategoriFU = new javax.swing.JLabel();
+        tfPostTitelFU = new javax.swing.JTextField();
 
         jdIngetAmneFU.setLocation(new java.awt.Point(400, 400));
         jdIngetAmneFU.setMaximumSize(new java.awt.Dimension(400, 150));
@@ -223,8 +222,6 @@ public class NewPostWindow extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane1.setViewportView(epPostTitelFU);
-
         lblPostTitelFU.setText("Titel:");
 
         jScrollPane2.setViewportView(epPostFonsterFU);
@@ -265,8 +262,10 @@ public class NewPostWindow extends javax.swing.JFrame {
                                 .addComponent(lblPostTitelFU)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jpNyPostFULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblForsUtbHead)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(tfPostTitelFU, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jpNyPostFULayout.createSequentialGroup()
+                                        .addGap(68, 68, 68)
+                                        .addComponent(lblForsUtbHead))))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(48, Short.MAX_VALUE))))
         );
@@ -276,9 +275,9 @@ public class NewPostWindow extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(lblForsUtbHead)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpNyPostFULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPostTitelFU, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jpNyPostFULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPostTitelFU, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfPostTitelFU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -308,10 +307,11 @@ public class NewPostWindow extends javax.swing.JFrame {
 
     private void btnSkickaPost1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkickaPost1ActionPerformed
      //skicka post till mainpostwindow jlInlaggFU
-     if(!epPostTitelFU.getText().isEmpty()) {
+     //If-statements kontrollerar att användaren skrivit och valt i alla fält.
+     if(!tfPostTitelFU.getText().isEmpty()) {
          if(!epPostFonsterFU.getText().isEmpty()) {
              if(cbKategoriFU.getSelectedIndex() != 0) {
-                String title = epPostTitelFU.getText();
+                String title = tfPostTitelFU.getText();
                 String post = epPostFonsterFU.getText();
                 String kategori = cbKategoriFU.getSelectedItem().toString();
              }
@@ -333,7 +333,7 @@ public class NewPostWindow extends javax.swing.JFrame {
 
     private void btnTillbaka1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbaka1ActionPerformed
         // TODO add your handling code here:
-        epPostTitelFU.removeAll();
+        tfPostTitelFU.removeAll();
         epPostFonsterFU.removeAll();
         dispose();
     }//GEN-LAST:event_btnTillbaka1ActionPerformed
@@ -397,11 +397,9 @@ public class NewPostWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnTillbaka1;
     private javax.swing.JComboBox<String> cbKategoriFU;
     private javax.swing.JEditorPane epPostFonsterFU;
-    private javax.swing.JEditorPane epPostTitelFU;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JDialog jdIngenKategoriFU;
     private javax.swing.JDialog jdIngenTextFU;
@@ -413,5 +411,6 @@ public class NewPostWindow extends javax.swing.JFrame {
     private javax.swing.JLabel lblForsUtbHead;
     private javax.swing.JLabel lblKategoriFU;
     private javax.swing.JLabel lblPostTitelFU;
+    private javax.swing.JTextField tfPostTitelFU;
     // End of variables declaration//GEN-END:variables
 }

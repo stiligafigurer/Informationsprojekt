@@ -326,8 +326,11 @@
                                   <Component id="lblPostTitelFU" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblForsUtbHead" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane1" min="-2" pref="151" max="-2" attributes="0"/>
+                                      <Component id="tfPostTitelFU" min="-2" pref="211" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                                          <Component id="lblForsUtbHead" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                               <Component id="jScrollPane2" alignment="0" min="-2" pref="390" max="-2" attributes="0"/>
@@ -344,9 +347,9 @@
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Component id="lblForsUtbHead" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblPostTitelFU" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblPostTitelFU" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="tfPostTitelFU" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" pref="201" max="-2" attributes="0"/>
@@ -382,17 +385,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTillbaka1ActionPerformed"/>
           </Events>
         </Component>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JEditorPane" name="epPostTitelFU">
-            </Component>
-          </SubComponents>
-        </Container>
         <Component class="javax.swing.JLabel" name="lblPostTitelFU">
           <Properties>
             <Property name="text" type="java.lang.String" value="Titel:"/>
@@ -437,6 +429,8 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Kategori:"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="tfPostTitelFU">
         </Component>
       </SubComponents>
     </Container>
