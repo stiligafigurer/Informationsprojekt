@@ -5,6 +5,7 @@
  */
 package informationsprojekt;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.DefaultListModel;
@@ -18,8 +19,8 @@ import oru.inf.InfDB;
  */
 public class Blogg extends javax.swing.JFrame {
 
-    DefaultListModel dmInlaggFU = new DefaultListModel();
-    DefaultListModel dmInlaggFritid = new DefaultListModel();
+    private DefaultListModel dmInlaggFU = new DefaultListModel();
+    private DefaultListModel dmInlaggFritid = new DefaultListModel();
 
     //private final InfDB db;
     /**
@@ -29,32 +30,28 @@ public class Blogg extends javax.swing.JFrame {
         initComponents();
         fyllInlaggFU();
         fyllInlaggFritid();
-        //this.db = db;
-
     }
 
     // Fyll listan med blogginlägg under forskning/utbildning
     private void fyllInlaggFU() {
-        /*try {
+        try {
+            
+            // Tillfällig kodrad som skapar ett blogginlägg
+            Databas.getDB().insert("INSERT INTO BLOGGINLAGG VALUES (1, '2018-01-24', 'Innehåll', 'Titel', 'Forskning', 1)");
+            
             ArrayList<HashMap<String, String>> inlaggen;
-            inlaggen = db.fetchRows("");
+            inlaggen = Databas.getDB().fetchRows("SELECT TITEL, ANSTALLDID FROM BLOGGINLAGG");
 
             if (inlaggen != null) {
                 for (HashMap<String, String> inlagg : inlaggen) {
-                    String nått1 = inlagg.get("");
-                    String nått2 = inlagg.get("");
-                    String nått3 = inlagg.get("");
-                    dmInlagg.addElement("");
+                    String titel = inlagg.get("TITEL");
+                    String anstalldId = inlagg.get("ANSTALLDID");
+                    dmInlaggFU.addElement(titel + " " + anstalldId);
                 }
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error: " + e);
-        } */
-        dmInlaggFU.addElement("BLOGG-ID 5");
-        dmInlaggFU.addElement("BLOGG-ID 4");
-        dmInlaggFU.addElement("BLOGG-ID 3");
-        dmInlaggFU.addElement("BLOGG-ID 2");
-        dmInlaggFU.addElement("BLOGG-ID 1");
+        }
         jlInlaggFU.setModel(dmInlaggFU);
     }
 
