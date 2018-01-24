@@ -40,10 +40,12 @@ public class NewPostWindow extends javax.swing.JFrame {
         lblCategoryFU = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(400, 400));
+        setMaximumSize(new java.awt.Dimension(1000, 1000));
+        setMinimumSize(new java.awt.Dimension(500, 500));
+        setSize(new java.awt.Dimension(500, 500));
 
-        jpNewPostFU.setLocation(new java.awt.Point(400, 400));
         jpNewPostFU.setPreferredSize(new java.awt.Dimension(500, 500));
-        jpNewPostFU.setSize(new java.awt.Dimension(500, 500));
 
         btnSendPost1.setText("Send Post");
         btnSendPost1.addActionListener(new java.awt.event.ActionListener() {
