@@ -35,10 +35,7 @@ public class Blogg extends javax.swing.JFrame {
     // Fyll listan med blogginlägg under forskning/utbildning
     private void fyllInlaggFU() {
         try {
-            
-            // Tillfällig kodrad som skapar ett blogginlägg
-            Databas.getDB().insert("INSERT INTO BLOGGINLAGG VALUES (1, '2018-01-24', 'Innehåll', 'Titel', 'Forskning', 1)");
-            
+                        
             ArrayList<HashMap<String, String>> inlaggen;
             inlaggen = Databas.getDB().fetchRows("SELECT TITEL, ANSTALLDID FROM BLOGGINLAGG");
 
