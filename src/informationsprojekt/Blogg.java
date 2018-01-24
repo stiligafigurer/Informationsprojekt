@@ -14,9 +14,9 @@ import oru.inf.InfDB;
 
 /**
  *
- * @author Rasmus
+ * @author Rasmus & Felix
  */
-public class Main extends javax.swing.JFrame {
+public class Blogg extends javax.swing.JFrame {
 
     DefaultListModel dmInlaggFU = new DefaultListModel();
     DefaultListModel dmInlaggFritid = new DefaultListModel();
@@ -25,7 +25,7 @@ public class Main extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
-    public Main() {
+    public Blogg() {
         initComponents();
         fyllInlaggFU();
         fyllInlaggFritid();
@@ -33,6 +33,7 @@ public class Main extends javax.swing.JFrame {
 
     }
 
+    // Fyll listan med blogginlägg under forskning/utbildning
     private void fyllInlaggFU() {
         /*try {
             ArrayList<HashMap<String, String>> inlaggen;
@@ -57,6 +58,7 @@ public class Main extends javax.swing.JFrame {
         jlInlaggFU.setModel(dmInlaggFU);
     }
 
+    // Fyll listan med blogginlägg under fritid
     private void fyllInlaggFritid() {
         /*try {
             ArrayList<HashMap<String, String>> inlaggen;
@@ -133,7 +135,7 @@ public class Main extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jList1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("ORU - Informatik");
+        setTitle("ORU - Blogg");
         setIconImage(new ImageIcon(getClass().getResource("/img" + "/oru_favicon.png")).getImage());
 
         btnSkrivFU.setText("Skriv Inlägg");
@@ -165,8 +167,8 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSkrivFU)
-                    .addComponent(btnUppdateraFU))
+                    .addComponent(btnUppdateraFU)
+                    .addComponent(btnSkrivFU))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
                 .addContainerGap())
@@ -180,7 +182,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnUppdateraFU)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSkrivFU, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnSkrivFU)))
                 .addContainerGap())
         );
 
@@ -213,11 +215,9 @@ public class Main extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnSkrivFritid)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnUppdateraFritid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(6, 6, 6)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnUppdateraFritid)
+                    .addComponent(btnSkrivFritid))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
                 .addContainerGap())
@@ -228,7 +228,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnUppdateraFritid, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnUppdateraFritid)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSkrivFritid))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))
@@ -251,10 +251,12 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // Öppnar ett NewPostWindow
     private void btnSkrivFUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkrivFUActionPerformed
         new NewPostWindow().setVisible(true);
     }//GEN-LAST:event_btnSkrivFUActionPerformed
 
+    // Öppnar ett blogginlägg när användaren klickar på det
     private void jlInlaggFUMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlInlaggFUMouseClicked
         int valtInlagg = jlInlaggFU.getSelectedIndex();
         if (valtInlagg != -1) {
