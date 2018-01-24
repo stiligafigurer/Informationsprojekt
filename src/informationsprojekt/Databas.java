@@ -16,7 +16,7 @@ public class Databas {
 
     public static InfDB getDB() {
         // Sökvägen för databasfilen
-        File databas = new File("PROJEKT.FDB");
+        File databas = new File("db/PROJEKT.FDB");
 
         try {
             db = new InfDB(databas.getAbsolutePath());
