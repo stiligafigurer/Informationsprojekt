@@ -8,6 +8,7 @@ package informationsprojekt;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 
@@ -17,7 +18,9 @@ import oru.inf.InfDB;
  */
 public class Main extends javax.swing.JFrame {
 
-    DefaultListModel dmInlagg = new DefaultListModel();
+    DefaultListModel dmInlaggFU = new DefaultListModel();
+    DefaultListModel dmInlaggFritid = new DefaultListModel();
+
     //private final InfDB db;
     /**
      * Creates new form Main
@@ -25,12 +28,13 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         fyllInlaggFU();
+        fyllInlaggFritid();
         //this.db = db;
 
     }
 
     private void fyllInlaggFU() {
-                /*try {
+        /*try {
             ArrayList<HashMap<String, String>> inlaggen;
             inlaggen = db.fetchRows("");
 
@@ -45,12 +49,36 @@ public class Main extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error: " + e);
         } */
-        dmInlagg.addElement("BLOGG-ID 5");
-        dmInlagg.addElement("BLOGG-ID 4");
-        dmInlagg.addElement("BLOGG-ID 3");
-        dmInlagg.addElement("BLOGG-ID 2");
-        dmInlagg.addElement("BLOGG-ID 1");
-        jlInlaggFU.setModel(dmInlagg);
+        dmInlaggFU.addElement("BLOGG-ID 5");
+        dmInlaggFU.addElement("BLOGG-ID 4");
+        dmInlaggFU.addElement("BLOGG-ID 3");
+        dmInlaggFU.addElement("BLOGG-ID 2");
+        dmInlaggFU.addElement("BLOGG-ID 1");
+        jlInlaggFU.setModel(dmInlaggFU);
+    }
+
+    private void fyllInlaggFritid() {
+        /*try {
+            ArrayList<HashMap<String, String>> inlaggen;
+            inlaggen = db.fetchRows("");
+
+            if (inlaggen != null) {
+                for (HashMap<String, String> inlagg : inlaggen) {
+                    String nått1 = inlagg.get("");
+                    String nått2 = inlagg.get("");
+                    String nått3 = inlagg.get("");
+                    dmInlagg.addElement("");
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e);
+        } */
+        dmInlaggFritid.addElement("BLOGG-ID 5");
+        dmInlaggFritid.addElement("BLOGG-ID 4");
+        dmInlaggFritid.addElement("BLOGG-ID 3");
+        dmInlaggFritid.addElement("BLOGG-ID 2");
+        dmInlaggFritid.addElement("BLOGG-ID 1");
+        jlInlaggFritid.setModel(dmInlaggFritid);
     }
 
     /**
@@ -71,10 +99,12 @@ public class Main extends javax.swing.JFrame {
         btnSkrivFU = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jlInlaggFU = new javax.swing.JList<>();
+        btnUppdateraFU = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         btnSkrivFritid = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jlInlaggFritid = new javax.swing.JList<>();
+        btnUppdateraFritid = new javax.swing.JButton();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -103,6 +133,8 @@ public class Main extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jList1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ORU - Informatik");
+        setIconImage(new ImageIcon(getClass().getResource("/img" + "/oru_favicon.png")).getImage());
 
         btnSkrivFU.setText("Skriv Inlägg");
         btnSkrivFU.addActionListener(new java.awt.event.ActionListener() {
@@ -119,56 +151,88 @@ public class Main extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(jlInlaggFU);
 
+        btnUppdateraFU.setText("Uppdatera");
+        btnUppdateraFU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUppdateraFUActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(btnSkrivFU)
-                .addGap(28, 28, 28)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSkrivFU)
+                    .addComponent(btnUppdateraFU))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnUppdateraFU)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSkrivFU, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(btnSkrivFU)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Forskning/Utbildning", jPanel2);
 
         btnSkrivFritid.setText("Skriv Inlägg");
+        btnSkrivFritid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSkrivFritidActionPerformed(evt);
+            }
+        });
 
+        jlInlaggFritid.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlInlaggFritidMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jlInlaggFritid);
+
+        btnUppdateraFritid.setText("Uppdatera");
+        btnUppdateraFritid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUppdateraFritidActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(btnSkrivFritid)
-                .addGap(33, 33, 33)
-                .addComponent(jScrollPane2)
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnSkrivFritid)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnUppdateraFritid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(6, 6, 6)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnUppdateraFritid, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSkrivFritid))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(btnSkrivFritid)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Fritid", jPanel3);
@@ -194,16 +258,42 @@ public class Main extends javax.swing.JFrame {
     private void jlInlaggFUMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlInlaggFUMouseClicked
         int valtInlagg = jlInlaggFU.getSelectedIndex();
         if (valtInlagg != -1) {
-            
+
             int bloggId;
-            bloggId = + dmInlagg.getSize() - valtInlagg;
+            bloggId = +dmInlaggFU.getSize() - valtInlagg;
             System.out.println(bloggId);
         }
     }//GEN-LAST:event_jlInlaggFUMouseClicked
 
+    private void btnSkrivFritidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkrivFritidActionPerformed
+        // new whatever
+    }//GEN-LAST:event_btnSkrivFritidActionPerformed
+
+    private void jlInlaggFritidMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlInlaggFritidMouseClicked
+        int valtInlagg = jlInlaggFritid.getSelectedIndex();
+        if (valtInlagg != -1) {
+
+            int bloggId;
+            bloggId = +dmInlaggFritid.getSize() - valtInlagg;
+            System.out.println(bloggId);
+        }
+    }//GEN-LAST:event_jlInlaggFritidMouseClicked
+
+    private void btnUppdateraFUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUppdateraFUActionPerformed
+        dmInlaggFU.clear();
+        fyllInlaggFU();
+    }//GEN-LAST:event_btnUppdateraFUActionPerformed
+
+    private void btnUppdateraFritidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUppdateraFritidActionPerformed
+        dmInlaggFritid.clear();
+        fyllInlaggFritid();
+    }//GEN-LAST:event_btnUppdateraFritidActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSkrivFU;
     private javax.swing.JButton btnSkrivFritid;
+    private javax.swing.JButton btnUppdateraFU;
+    private javax.swing.JButton btnUppdateraFritid;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
