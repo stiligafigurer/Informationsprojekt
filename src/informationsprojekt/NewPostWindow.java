@@ -51,9 +51,7 @@ public class NewPostWindow extends javax.swing.JFrame {
         tfPostTitelFU = new javax.swing.JTextField();
 
         jdIngetAmneFU.setLocation(new java.awt.Point(400, 400));
-        jdIngetAmneFU.setMaximumSize(new java.awt.Dimension(400, 150));
         jdIngetAmneFU.setMinimumSize(new java.awt.Dimension(400, 150));
-        jdIngetAmneFU.setPreferredSize(new java.awt.Dimension(400, 150));
         jdIngetAmneFU.setSize(new java.awt.Dimension(400, 150));
 
         lblDialogIngetAmneFU.setText("Du måste skriva ett ämne för inlägget");
@@ -101,9 +99,7 @@ public class NewPostWindow extends javax.swing.JFrame {
         );
 
         jdIngenTextFU.setLocation(new java.awt.Point(400, 400));
-        jdIngenTextFU.setMaximumSize(new java.awt.Dimension(400, 150));
         jdIngenTextFU.setMinimumSize(new java.awt.Dimension(400, 150));
-        jdIngenTextFU.setPreferredSize(new java.awt.Dimension(400, 150));
         jdIngenTextFU.setSize(new java.awt.Dimension(400, 150));
 
         lblDialogIngenTextFU.setText("Du måste skriva en text i inlägget");
@@ -151,9 +147,7 @@ public class NewPostWindow extends javax.swing.JFrame {
         );
 
         jdIngenKategoriFU.setLocation(new java.awt.Point(400, 400));
-        jdIngenKategoriFU.setMaximumSize(new java.awt.Dimension(400, 150));
         jdIngenKategoriFU.setMinimumSize(new java.awt.Dimension(400, 150));
-        jdIngenKategoriFU.setPreferredSize(new java.awt.Dimension(400, 150));
         jdIngenKategoriFU.setSize(new java.awt.Dimension(400, 150));
 
         lblDialogIngenKategoriFU.setText("Du måste välja en kategori för ditt inlägg");
@@ -245,8 +239,8 @@ public class NewPostWindow extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblKategoriFU)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cbKategoriFU, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(198, 198, 198))
+                .addComponent(cbKategoriFU, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(169, 169, 169))
             .addGroup(jpNyPostFULayout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addGroup(jpNyPostFULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -284,7 +278,7 @@ public class NewPostWindow extends javax.swing.JFrame {
                 .addGroup(jpNyPostFULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbKategoriFU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblKategoriFU))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jpNyPostFULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSkickaPost1)
                     .addComponent(btnTillbaka1))

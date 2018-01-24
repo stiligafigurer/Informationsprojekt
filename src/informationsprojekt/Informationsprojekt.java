@@ -16,7 +16,6 @@ public class Informationsprojekt {
      */
     public static void main(String[] args) {
         new Main().setVisible(true);
-        new NewPostWindow().setVisible(true);
     }
     
 }
