@@ -252,7 +252,7 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSkrivFUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkrivFUActionPerformed
-        //new.NewPostWindow().setVisible(true);
+        new NewPostWindow().setVisible(true);
     }//GEN-LAST:event_btnSkrivFUActionPerformed
 
     private void jlInlaggFUMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlInlaggFUMouseClicked
@@ -266,7 +266,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jlInlaggFUMouseClicked
 
     private void btnSkrivFritidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkrivFritidActionPerformed
-        // new whatever
+        new NewPostWindow().setVisible(true);
     }//GEN-LAST:event_btnSkrivFritidActionPerformed
 
     private void jlInlaggFritidMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlInlaggFritidMouseClicked
