@@ -178,7 +178,7 @@ public class NyAnvandare extends javax.swing.JFrame {
             String adminStatus = cmbadmin.getSelectedItem().toString();
             //String prenumererar = tfprenumerera.getText();
             //String adminStat = "update anstalld set adminstatus = 'T' where fornamn= '" + fornamn + "'"; 
-            
+            //HEJ
             
             //String anstalldID = Databas.getDB().fetchSingle("select max(ANSTALLDID)+1 from ANSTALLD");
             
