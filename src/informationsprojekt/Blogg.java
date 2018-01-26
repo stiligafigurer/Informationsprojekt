@@ -96,6 +96,7 @@ public class Blogg extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jlInlaggFU = new javax.swing.JList<>();
         btnUppdateraFU = new javax.swing.JButton();
+        btnByt = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         btnSkrivFritid = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -154,6 +155,13 @@ public class Blogg extends javax.swing.JFrame {
             }
         });
 
+        btnByt.setText("jButton1");
+        btnByt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBytActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -162,7 +170,8 @@ public class Blogg extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnUppdateraFU)
-                    .addComponent(btnSkrivFU))
+                    .addComponent(btnSkrivFU)
+                    .addComponent(btnByt))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
                 .addContainerGap())
@@ -175,6 +184,8 @@ public class Blogg extends javax.swing.JFrame {
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnUppdateraFU)
+                        .addGap(76, 76, 76)
+                        .addComponent(btnByt)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSkrivFU)))
                 .addContainerGap())
@@ -285,7 +296,12 @@ public class Blogg extends javax.swing.JFrame {
         fyllInlaggFritid();
     }//GEN-LAST:event_btnUppdateraFritidActionPerformed
 
+    private void btnBytActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBytActionPerformed
+        new NyAnvandare().setVisible(true);
+    }//GEN-LAST:event_btnBytActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnByt;
     private javax.swing.JButton btnSkrivFU;
     private javax.swing.JButton btnSkrivFritid;
     private javax.swing.JButton btnUppdateraFU;

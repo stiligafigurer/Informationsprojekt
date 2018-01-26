@@ -126,8 +126,8 @@ public class Login extends javax.swing.JFrame {
             String losenord= new String(pass);
             if ((uname.equals("Admin") && losenord.equals("hej"))){
                 JOptionPane.showMessageDialog(null,"Inloggningen lyckad");
-                Main nastaSida = new Main();
-                nastaSida.setVisible(true);
+                //Main nastaSida = new Main();
+                //nastaSida.setVisible(true);
                 super.dispose();
             }
             else{
