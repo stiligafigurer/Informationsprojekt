@@ -46,6 +46,11 @@ public class AvaktiveraAnvandare extends javax.swing.JFrame {
         });
 
         btnavaktivera.setText("Avaktivera");
+        btnavaktivera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnavaktiveraActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,6 +83,22 @@ public class AvaktiveraAnvandare extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_cmbAnstalldActionPerformed
+
+    private void btnavaktiveraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnavaktiveraActionPerformed
+        try {
+            String namn = cmbAnstalld.getSelectedItem().toString();
+            String [] split = namn.split(" ");
+            String fornamn = split[0];
+            String efternamn = split[1];
+            String anstalldID = "select anstalld from anstalld where fornamn = '" + fornamn + "' and efternamn = '" + efternamn + "'";
+            String hamtaAnstalldID = Databas.getDB().fetchSingle(anstalldID);
+            String andraStatus = "update anstalld set aktiverad = 'F' where anstalldid = '" + hamtaAnstalldID + "'";
+            Databas.getDB().update(andraStatus);
+            JOptionPane.showMessageDialog(null, "Användaren har blivit avaktiverad");
+        } catch (InfException e) {
+            JOptionPane.showMessageDialog(null, "Något gick fel");
+        }
+    }//GEN-LAST:event_btnavaktiveraActionPerformed
     
     private void fillCombobox() {
         for (int i=0; i <anstalld.size(); i++) {
