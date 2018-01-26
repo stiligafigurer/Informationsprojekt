@@ -183,7 +183,7 @@ public class NyAnvandare extends javax.swing.JFrame {
             //String anstalldID = Databas.getDB().fetchSingle("select max(ANSTALLDID)+1 from ANSTALLD");
             
             
-            Databas.getDB().insert("insert into anstalld values(" + anstalldID + ", '" + fornamn + "', '" + efternamn + "', '" + epost + "', '" + telefon + "', '" + losenord + "', '" + adminStatus + "', '" + null + "')");
+            Databas.getDB().insert("insert into anstalld values(" + anstalldID + ", '" + fornamn + "', '" + efternamn + "', '" + epost + "', '" + telefon + "', '" + losenord + "', '" + adminStatus + "', '" + null + "', '" + null + "')");
             //Databas.getDB().update(adminStat);
             JOptionPane.showMessageDialog(null, "Ny användare registrerad.");
         
